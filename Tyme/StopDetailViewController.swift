@@ -11,11 +11,11 @@ import UIKit
 class StopDetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     
-    public static var selectedString : String?
+    public static var selected : Stop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailLabel.text = StopDetailViewController.selectedString
+        detailLabel.text = StopDetailViewController.selected?.name
         // Do any additional setup after loading the view.
     }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class FavouriteTableViewController: UITableViewController {
     
-    let data = ["Aalborg", "Nørresundby", "Vodskov"]
+    let data = [Stop("Aalborg"), Stop("Nørresundby"), Stop("Vodskov")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +42,13 @@ class FavouriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavCell", for: indexPath)
 
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = data[indexPath.row].name
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        StopDetailViewController.selectedString = data[indexPath.row]
+        StopDetailViewController.selected = data[indexPath.row]
     }
     
 

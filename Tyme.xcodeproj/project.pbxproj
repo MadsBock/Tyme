@@ -15,6 +15,7 @@
 		FF9FF32A1FCF0EF00048504B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */; };
 		FF9FF3321FCF11180048504B /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */; };
 		FF9FF3341FCF130C0048504B /* StopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3331FCF130C0048504B /* StopDetailViewController.swift */; };
+		FF9FF3361FCF15760048504B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3351FCF15760048504B /* Stop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FF9FF32B1FCF0EF00048504B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
 		FF9FF3331FCF130C0048504B /* StopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailViewController.swift; sourceTree = "<group>"; };
+		FF9FF3351FCF15760048504B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				FF9FF31F1FCF0EF00048504B /* FirstViewController.swift */,
 				FF9FF3211FCF0EF00048504B /* SecondViewController.swift */,
 				FF9FF3231FCF0EF00048504B /* Main.storyboard */,
+				FF9FF3351FCF15760048504B /* Stop.swift */,
 				FF9FF3331FCF130C0048504B /* StopDetailViewController.swift */,
 				FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */,
 				FF9FF3261FCF0EF00048504B /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */,
 				FF9FF3341FCF130C0048504B /* StopDetailViewController.swift in Sources */,
 				FF9FF3201FCF0EF00048504B /* FirstViewController.swift in Sources */,
+				FF9FF3361FCF15760048504B /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
