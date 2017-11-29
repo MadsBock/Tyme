@@ -14,7 +14,11 @@ class FavouriteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var newArray = [StopEntry]()
+        for i in 0..<100 {
+            newArray.append(StopEntry(line: "Piccadilly", hours: i/60, minutes: i%60))
+        }
+        data[0].set(entries: newArray)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,7 +52,7 @@ class FavouriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        StopDetailTableViewController.selected = data[indexPath.row]
     }
     
 

@@ -9,9 +9,12 @@
 import UIKit
 
 class StopDetailTableViewController: UITableViewController {
+    
+    public static var selected : Stop?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Stop Detail")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,14 +37,18 @@ class StopDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 300
+        if let sel = StopDetailTableViewController.selected {
+            return sel.getEntries().count
+        } else {
+            return 0
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
 
-        cell.textLabel?.text = String(format: "%3d", indexPath.row*5)
+        cell.textLabel?.text = StopDetailTableViewController.selected?.getEntries()[indexPath.row].description
 
         return cell
     }
