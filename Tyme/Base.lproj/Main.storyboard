@@ -93,15 +93,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavCell" id="g9f-mq-HBV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FavCell" id="g9f-mq-HBV">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g9f-mq-HBV" id="7si-Jw-U2Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cSb-ct-WpV" kind="show" id="aP3-lh-ldC"/>
+                                    <segue destination="w12-5Z-dZQ" kind="show" id="7tl-mq-MVv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -116,35 +116,33 @@
             </objects>
             <point key="canvasLocation" x="1495" y="-1086"/>
         </scene>
-        <!--Stop Detail View Controller-->
-        <scene sceneID="oFI-sc-3JZ">
+        <!--Stop Detail Table View Controller-->
+        <scene sceneID="LPw-C6-rCo">
             <objects>
-                <viewController id="cSb-ct-WpV" customClass="StopDetailViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="C3D-DE-OEq">
+                <tableViewController id="w12-5Z-dZQ" customClass="StopDetailTableViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yae-mv-JzZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It Works!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-rc-BzB">
-                                <rect key="frame" x="153.5" y="323" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="m7i-rc-BzB" firstAttribute="centerX" secondItem="C3D-DE-OEq" secondAttribute="centerX" id="ZeF-42-RU3"/>
-                            <constraint firstItem="m7i-rc-BzB" firstAttribute="centerY" secondItem="C3D-DE-OEq" secondAttribute="centerY" id="wr2-FI-JJg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="zk1-6U-t1w"/>
-                    </view>
-                    <connections>
-                        <outlet property="detailLabel" destination="m7i-rc-BzB" id="9kY-Or-JOl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xrP-cY-b0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" id="XM7-pK-eKW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XM7-pK-eKW" id="gF9-1K-8KD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="w12-5Z-dZQ" id="v0V-yL-aLT"/>
+                            <outlet property="delegate" destination="w12-5Z-dZQ" id="a3B-Nl-LbZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAB-3U-IfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2304.8000000000002" y="-1086.2068965517242"/>
+            <point key="canvasLocation" x="2374" y="-1086"/>
         </scene>
         <!--Mine Stop-->
         <scene sceneID="QZx-Yp-pSA">

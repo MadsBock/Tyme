@@ -1,5 +1,5 @@
 //
-//  FavouriteTableViewController.swift
+//  StopDetailTableViewController.swift
 //  Tyme
 //
 //  Created by elev on 29/11/2017.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class FavouriteTableViewController: UITableViewController {
-    
-    let data = [Stop("Aalborg"), Stop("Nørresundby"), Stop("Vodskov")]
+class StopDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +28,22 @@ class FavouriteTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return 300
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
 
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = String(format: "%3d", indexPath.row*5)
 
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
 
