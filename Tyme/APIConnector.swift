@@ -11,7 +11,7 @@ import UIKit
 class APIConnector: NSObject {
     private let base = "https://xmlopen.rejseplanen.dk/bin/rest.exe"
     
-    public func PerformSearch(_ searchString : String, completion: (SearchResult?)->Void) {
+    public func PerformSearch(_ searchString : String, completion: @escaping ([StopLocation]?)->Void) {
         let query : [String: String] = [
             "input" : searchString,
             "format" : "json"
@@ -24,16 +24,48 @@ class APIConnector: NSObject {
         
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
-            if let data = data, let string = String(data: data, encoding: .utf8) {
-                print(string)
+            if let data = data {
+                let jsonDecoder = JSONDecoder()
+                let info = try? jsonDecoder.decode(SuperContainer.self, from: data)
+                completion(info?.LocationList.list)
             }
         }
         print(url.absoluteString)
         task.resume()
     }
     
-    struct SearchResult {
-        public var test : String
+    private struct SuperContainer : Codable {
+        public var LocationList : Container
+    }
+    
+    private struct Container : Codable {
+        public var list : [StopLocation]
+        
+        enum CodingKeys: String, CodingKey {
+            case list = "StopLocation"
+        }
+    }
+    
+    public struct StopLocation : Codable{
+        public var name : String
+        public var id : String
+        public var x : Int
+        public var y : Int
+        
+        enum CodingKeys: String, CodingKey {
+            case name
+            case id
+            case x
+            case y
+        }
+        
+        init(from decoder: Decoder) throws {
+            let valueContainer = try decoder.container(keyedBy: CodingKeys.self)
+            self.name = try valueContainer.decode(String.self, forKey: CodingKeys.name)
+            self.id = try valueContainer.decode(String.self, forKey: CodingKeys.id)
+            self.x = Int(try valueContainer.decode(String.self, forKey: CodingKeys.x))!
+            self.y = Int(try valueContainer.decode(String.self, forKey: CodingKeys.y))!
+        }
     }
 }
 
