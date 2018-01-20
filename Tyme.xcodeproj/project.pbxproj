@@ -7,29 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF925A42201359C000E69509 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A41201359C000E69509 /* SearchViewController.swift */; };
+		FF925A4420135A2100E69509 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A4320135A2100E69509 /* APIConnector.swift */; };
 		FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */; };
-		FF9FF3201FCF0EF00048504B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF31F1FCF0EF00048504B /* FirstViewController.swift */; };
-		FF9FF3221FCF0EF00048504B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3211FCF0EF00048504B /* SecondViewController.swift */; };
 		FF9FF3251FCF0EF00048504B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3231FCF0EF00048504B /* Main.storyboard */; };
 		FF9FF3271FCF0EF00048504B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3261FCF0EF00048504B /* Assets.xcassets */; };
 		FF9FF32A1FCF0EF00048504B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */; };
-		FF9FF3321FCF11180048504B /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */; };
-		FF9FF3361FCF15760048504B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3351FCF15760048504B /* Stop.swift */; };
-		FF9FF3381FCF1BB90048504B /* StopDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF3371FCF1BB90048504B /* StopDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF925A41201359C000E69509 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF925A4320135A2100E69509 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		FF9FF31A1FCF0EF00048504B /* Tyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF9FF31F1FCF0EF00048504B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FF9FF3211FCF0EF00048504B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FF9FF3241FCF0EF00048504B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF9FF3261FCF0EF00048504B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF9FF3291FCF0EF00048504B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF9FF32B1FCF0EF00048504B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
-		FF9FF3351FCF15760048504B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
-		FF9FF3371FCF1BB90048504B /* StopDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +56,10 @@
 		FF9FF31C1FCF0EF00048504B /* Tyme */ = {
 			isa = PBXGroup;
 			children = (
-				FF9FF3371FCF1BB90048504B /* StopDetailTableViewController.swift */,
 				FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */,
-				FF9FF31F1FCF0EF00048504B /* FirstViewController.swift */,
-				FF9FF3211FCF0EF00048504B /* SecondViewController.swift */,
 				FF9FF3231FCF0EF00048504B /* Main.storyboard */,
-				FF9FF3351FCF15760048504B /* Stop.swift */,
-				FF9FF3311FCF11180048504B /* FavouriteTableViewController.swift */,
+				FF925A41201359C000E69509 /* SearchViewController.swift */,
+				FF925A4320135A2100E69509 /* APIConnector.swift */,
 				FF9FF3261FCF0EF00048504B /* Assets.xcassets */,
 				FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */,
 				FF9FF32B1FCF0EF00048504B /* Info.plist */,
@@ -148,12 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF9FF3221FCF0EF00048504B /* SecondViewController.swift in Sources */,
-				FF9FF3321FCF11180048504B /* FavouriteTableViewController.swift in Sources */,
-				FF9FF3381FCF1BB90048504B /* StopDetailTableViewController.swift in Sources */,
+				FF925A4420135A2100E69509 /* APIConnector.swift in Sources */,
+				FF925A42201359C000E69509 /* SearchViewController.swift in Sources */,
 				FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */,
-				FF9FF3201FCF0EF00048504B /* FirstViewController.swift in Sources */,
-				FF9FF3361FCF15760048504B /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
