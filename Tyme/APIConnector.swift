@@ -8,10 +8,9 @@
 
 import UIKit
 
-class APIConnector: NSObject {
-    private let base = "https://xmlopen.rejseplanen.dk/bin/rest.exe"
+class APIConnector: API {
     
-    public func PerformSearch(_ searchString : String, completion: @escaping ([StopLocation]?)->Void) {
+    public func PerformSearch(_ searchString : String, completion: @escaping ([StopLocation]?)->()) {
         let query : [String: String] = [
             "input" : searchString,
             "format" : "json"
@@ -22,16 +21,16 @@ class APIConnector: NSObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
+        contentsFrom(url: url) {
+            (data) in
             if let data = data {
                 let jsonDecoder = JSONDecoder()
                 let info = try? jsonDecoder.decode(SuperContainer.self, from: data)
                 completion(info?.LocationList.list)
+            } else {
+                completion(nil)
             }
         }
-        print(url.absoluteString)
-        task.resume()
     }
     
     private struct SuperContainer : Codable {
@@ -66,15 +65,5 @@ class APIConnector: NSObject {
             self.x = Int(try valueContainer.decode(String.self, forKey: CodingKeys.x))!
             self.y = Int(try valueContainer.decode(String.self, forKey: CodingKeys.y))!
         }
-    }
-}
-
-extension URL {
-    func withQueries(_ queries: [String: String]) -> URL? {
-        var components = URLComponents(url: self,
-                                       resolvingAgainstBaseURL: true)
-        components?.queryItems = queries.flatMap
-            { URLQueryItem(name: $0.0, value: $0.1) }
-        return components?.url
     }
 }

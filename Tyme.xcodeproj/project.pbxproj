@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF925A42201359C000E69509 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A41201359C000E69509 /* SearchViewController.swift */; };
+		FF21CAC42013980100FCC0A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAC32013980100FCC0A7 /* MainViewController.swift */; };
+		FF21CAC62013984E00FCC0A7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAC52013984E00FCC0A7 /* API.swift */; };
+		FF21CADD2013B17400FCC0A7 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CADC2013B17400FCC0A7 /* SearchTableViewController.swift */; };
+		FF21CADF2013BE5000FCC0A7 /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */; };
+		FF21CAE12013BF5200FCC0A7 /* APIDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */; };
 		FF925A4420135A2100E69509 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A4320135A2100E69509 /* APIConnector.swift */; };
 		FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */; };
 		FF9FF3251FCF0EF00048504B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3231FCF0EF00048504B /* Main.storyboard */; };
@@ -16,7 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF925A41201359C000E69509 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF21CAC32013980100FCC0A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF21CAC52013984E00FCC0A7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FF21CADC2013B17400FCC0A7 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
+		FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDetail.swift; sourceTree = "<group>"; };
 		FF925A4320135A2100E69509 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		FF9FF31A1FCF0EF00048504B /* Tyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +64,13 @@
 		FF9FF31C1FCF0EF00048504B /* Tyme */ = {
 			isa = PBXGroup;
 			children = (
+				FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */,
+				FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */,
 				FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */,
 				FF9FF3231FCF0EF00048504B /* Main.storyboard */,
-				FF925A41201359C000E69509 /* SearchViewController.swift */,
+				FF21CADC2013B17400FCC0A7 /* SearchTableViewController.swift */,
+				FF21CAC32013980100FCC0A7 /* MainViewController.swift */,
+				FF21CAC52013984E00FCC0A7 /* API.swift */,
 				FF925A4320135A2100E69509 /* APIConnector.swift */,
 				FF9FF3261FCF0EF00048504B /* Assets.xcassets */,
 				FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */,
@@ -139,9 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF21CADF2013BE5000FCC0A7 /* SearchDetailTableViewController.swift in Sources */,
+				FF21CAC42013980100FCC0A7 /* MainViewController.swift in Sources */,
 				FF925A4420135A2100E69509 /* APIConnector.swift in Sources */,
-				FF925A42201359C000E69509 /* SearchViewController.swift in Sources */,
+				FF21CADD2013B17400FCC0A7 /* SearchTableViewController.swift in Sources */,
+				FF21CAC62013984E00FCC0A7 /* API.swift in Sources */,
 				FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */,
+				FF21CAE12013BF5200FCC0A7 /* APIDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

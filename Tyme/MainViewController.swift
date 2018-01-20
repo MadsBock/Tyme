@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  MainViewController.swift
 //  Tyme
 //
 //  Created by elev on 20/01/2018.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIConnector().PerformSearch("test test") {
-            (result) in print("Done")
-        }
+        
+
         // Do any additional setup after loading the view.
     }
 
