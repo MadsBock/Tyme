@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oeu-dK-XTk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oeu-dK-XTk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +46,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchDetail" textLabel="0iM-F1-tel" detailTextLabel="QnQ-eC-R0O" style="IBUITableViewCellStyleValue1" id="TM5-Ko-vXb">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchDetail" textLabel="0iM-F1-tel" detailTextLabel="QnQ-eC-R0O" style="IBUITableViewCellStyleValue1" id="TM5-Ko-vXb">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TM5-Ko-vXb" id="lM1-T2-Bqc">
@@ -76,12 +76,18 @@
                             <outlet property="delegate" destination="Eti-S4-i2S" id="TxN-2P-enn"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Jn7-j8-3n1"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleBar" destination="Jn7-j8-3n1" id="Yir-HH-THP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZE-Go-gQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1436" y="-361"/>
         </scene>
-        <!--Stoppesteder-->
+        <!--Søgeresultater-->
         <scene sceneID="qT7-jc-mhq">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="69R-I0-aj3" customClass="SearchTableViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +113,7 @@
                             <outlet property="delegate" destination="69R-I0-aj3" id="pRR-Ho-s11"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Stoppesteder" id="2Vk-1m-zwx"/>
+                    <navigationItem key="navigationItem" title="Søgeresultater" id="yJP-2F-HLq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZj-i9-TWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

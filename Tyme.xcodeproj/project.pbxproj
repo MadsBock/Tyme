@@ -12,6 +12,7 @@
 		FF21CADD2013B17400FCC0A7 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CADC2013B17400FCC0A7 /* SearchTableViewController.swift */; };
 		FF21CADF2013BE5000FCC0A7 /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */; };
 		FF21CAE12013BF5200FCC0A7 /* APIDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */; };
+		FF21CAE32014165500FCC0A7 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAE22014165500FCC0A7 /* FavouritesController.swift */; };
 		FF925A4420135A2100E69509 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A4320135A2100E69509 /* APIConnector.swift */; };
 		FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */; };
 		FF9FF3251FCF0EF00048504B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3231FCF0EF00048504B /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		FF21CADC2013B17400FCC0A7 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
 		FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDetail.swift; sourceTree = "<group>"; };
+		FF21CAE22014165500FCC0A7 /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		FF925A4320135A2100E69509 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		FF9FF31A1FCF0EF00048504B /* Tyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		FF9FF31C1FCF0EF00048504B /* Tyme */ = {
 			isa = PBXGroup;
 			children = (
+				FF21CAE22014165500FCC0A7 /* FavouritesController.swift */,
 				FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */,
 				FF21CADE2013BE5000FCC0A7 /* SearchDetailTableViewController.swift */,
 				FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF21CADF2013BE5000FCC0A7 /* SearchDetailTableViewController.swift in Sources */,
+				FF21CAE32014165500FCC0A7 /* FavouritesController.swift in Sources */,
 				FF21CAC42013980100FCC0A7 /* MainViewController.swift in Sources */,
 				FF925A4420135A2100E69509 /* APIConnector.swift in Sources */,
 				FF21CADD2013B17400FCC0A7 /* SearchTableViewController.swift in Sources */,

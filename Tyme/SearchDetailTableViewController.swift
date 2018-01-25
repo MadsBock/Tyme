@@ -9,13 +9,26 @@
 import UIKit
 
 class SearchDetailTableViewController: UITableViewController {
-
+    @IBOutlet weak var titleBar: UINavigationItem!
+    private let favorites = FavouritesController.instance
+    
+    @IBAction func AddFavouriteButton(_ sender: UIBarButtonItem) {
+        let success = favorites.AddFavourite(withID: data.id, andName: data.name)
+        if success {
+            print("Saved!")
+        } else {
+            print("Failed")
+        }
+    }
     public var data : APIConnector.StopLocation! {
         didSet {
+            titleBar.title = data.name
             APIDetail().GetDetails(id: data.id) {
                 (details) in
                 self.details = details
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }

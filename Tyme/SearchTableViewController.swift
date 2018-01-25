@@ -101,6 +101,7 @@ class SearchTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "show detail") {
             if let detail = segue.destination as? SearchDetailTableViewController, let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell)?.row {
+                    print (stops[index])
                     detail.data = stops[index]
             } else {
                 print("Something Went Wrong!")

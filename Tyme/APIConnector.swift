@@ -20,6 +20,7 @@ class APIConnector: API {
             completion(nil)
             return
         }
+        print(url)
         
         contentsFrom(url: url) {
             (data) in
