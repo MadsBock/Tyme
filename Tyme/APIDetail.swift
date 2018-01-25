@@ -35,7 +35,6 @@ class APIDetail: API {
             } else {
                 completion(nil)
             }
-            
         }
     }
     

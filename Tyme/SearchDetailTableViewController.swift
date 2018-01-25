@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SearchDetailTableViewController: UITableViewController {
-    @IBOutlet weak var titleBar: UINavigationItem!
+class SearchDetailTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let favorites = FavouritesController.instance
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     @IBAction func AddFavouriteButton(_ sender: UIBarButtonItem) {
         let success = favorites.AddFavourite(withID: data.id, andName: data.name)
@@ -22,7 +24,6 @@ class SearchDetailTableViewController: UITableViewController {
     }
     public var data : APIConnector.StopLocation! {
         didSet {
-            titleBar.title = data.name
             APIDetail().GetDetails(id: data.id) {
                 (details) in
                 self.details = details
@@ -51,12 +52,12 @@ class SearchDetailTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if let r = details?.count {
             return r
@@ -65,7 +66,7 @@ class SearchDetailTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchDetail", for: indexPath)
         let detail = details![indexPath.row]
         cell.textLabel?.text = "\(detail.name) - \(detail.direction)"
