@@ -46,7 +46,7 @@ class APIConnector: API {
         }
     }
     
-    public struct StopLocation : Codable{
+    public struct StopLocation : Codable, StopInfo{
         public var name : String
         public var id : String
         public var x : Int

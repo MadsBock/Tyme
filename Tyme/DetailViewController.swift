@@ -8,27 +8,32 @@
 
 import UIKit
 
-class SearchDetailTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let favorites = FavouritesController.instance
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var titlebar: UINavigationItem!
     
     @IBAction func AddFavouriteButton(_ sender: UIBarButtonItem) {
-        let success = favorites.AddFavourite(withID: data.id, andName: data.name)
-        if success {
-            print("Saved!")
-        } else {
-            print("Failed")
+        if let data = data {
+            let success = favorites.AddFavourite(withID: data.id, andName: data.name)
+            if success {
+                print("Saved!")
+            } else {
+                print("Failed")
+            }
         }
     }
-    public var data : APIConnector.StopLocation! {
+    public var data : StopInfo? {
         didSet {
-            APIDetail().GetDetails(id: data.id) {
-                (details) in
-                self.details = details
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+            if let data = data {
+                APIDetail().GetDetails(id: data.id) {
+                    (details) in
+                    self.details = details
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
@@ -37,6 +42,7 @@ class SearchDetailTableViewController: UIViewController, UITableViewDataSource, 
     private var details : [APIDetail.Details]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        titlebar.title = data?.name
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -1,32 +1,17 @@
 //
-//  SearchTableViewController.swift
+//  FavouritesTableViewController.swift
 //  Tyme
 //
-//  Created by elev on 20/01/2018.
+//  Created by elev on 25/01/2018.
 //  Copyright © 2018 Mads Bock. All rights reserved.
 //
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
-
-    var stops : [APIConnector.StopLocation] = []
+class FavouritesTableViewController: UITableViewController {
+    private let controller = FavouritesController.instance
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Did Load")
-        APIConnector().PerformSearch("Vodskov") {
-            (stops) in
-            if let stops = stops {
-                self.stops = stops
-            } else {
-                self.stops = []
-            }
-            print("Updating!")
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,18 +27,18 @@ class SearchTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return stops.count
+        let res = controller.favourites.count
+        return res
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "search", for: indexPath)
-        cell.textLabel?.text = stops[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fav cell", for: indexPath)
+        let index = indexPath.row
+        cell.textLabel?.text = controller.getIndex(index)?.name
 
         return cell
     }
@@ -97,18 +82,23 @@ class SearchTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if(segue.identifier == "show detail") {
-            if let detail = segue.destination as? DetailViewController, let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell)?.row {
-                    print (stops[index])
-                    detail.data = stops[index]
+            if let detail = segue.destination as? DetailViewController, let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell)?.row, let data = controller.getIndex(index) {
+                
+                detail.data = data
             } else {
                 print("Something Went Wrong!")
             }
         } else {
-            print(segue.identifier)
+            print("Segue was \(segue.identifier)")
         }
     }
 
+}
+
+extension FavouritesController {
+    func getIndex(_ index: Int) -> FavouritesController.Favourite? {
+        let keyArray = Array(self.favourites.keys)
+        return self.favourites[keyArray[index]]
+    }
 }

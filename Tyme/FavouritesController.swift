@@ -18,7 +18,7 @@ class FavouritesController: NSObject {
         LoadData()
     }
     
-    @objc(_TtCC4Tyme20FavouritesController9Favourite)class Favourite : NSObject, NSCoding {
+    @objc(_TtCC4Tyme20FavouritesController9Favourite)class Favourite : NSObject, NSCoding, StopInfo {
         public var name : String
         public var id : String
         public var main : Bool

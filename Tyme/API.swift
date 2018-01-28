@@ -20,6 +20,11 @@ class API: NSObject {
     }
 }
 
+protocol StopInfo {
+    var name : String {get}
+    var id : String {get}
+}
+
 extension URL {
     func withQueries(_ queries: [String: String]) -> URL? {
         var components = URLComponents(url: self,
