@@ -154,7 +154,7 @@
         <!--Favouritter-->
         <scene sceneID="g8g-92-YTw">
             <objects>
-                <splitViewController id="kLj-Sh-3Un" sceneMemberID="viewController">
+                <splitViewController id="kLj-Sh-3Un" customClass="CustomSplitViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favouritter" id="bKr-bG-2QV"/>
                     <connections>
                         <segue destination="aHC-e7-02n" kind="relationship" relationship="masterViewController" id="fYR-zL-zdu"/>
