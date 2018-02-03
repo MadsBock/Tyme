@@ -24,7 +24,7 @@ class LocationTableViewController: UITableViewController, CLLocationManagerDeleg
     
     func loadLocationData() {
    locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestLocation()
     }
     
