@@ -10,21 +10,26 @@ import UIKit
 import CoreLocation
 
 class LocationTableViewController: UITableViewController, CLLocationManagerDelegate {
-
     let locationManager = CLLocationManager()
-    var stops : [StopInfo]? = []
+    var stops : [LocationStopInfo]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        loadLocationData()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(listRefreshed(_:)), for: .valueChanged)
+    }
+    
+    func loadLocationData() {
+   locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestLocation()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func listRefreshed(_ sender:Any) {
+        loadLocationData()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -33,6 +38,7 @@ class LocationTableViewController: UITableViewController, CLLocationManagerDeleg
             self.stops = $0
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
             }
         }
     }
@@ -62,9 +68,10 @@ class LocationTableViewController: UITableViewController, CLLocationManagerDeleg
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "loc cell", for: indexPath)
-        guard let stopname = stops?[indexPath.row].name else {return cell}
+        guard let stop = stops?[indexPath.row] else {return cell}
         
-        cell.textLabel?.text = stopname
+        cell.textLabel?.text = stop.name
+        cell.detailTextLabel?.text = "\(stop.distance)m"
 
         return cell
     }
@@ -123,4 +130,8 @@ class LocationTableViewController: UITableViewController, CLLocationManagerDeleg
         }
     }
 
+}
+
+protocol LocationStopInfo : StopInfo {
+    var distance : String {get}
 }

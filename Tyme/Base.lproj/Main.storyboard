@@ -55,9 +55,9 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUm-Dl-E9W">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Tilføj favourit" id="kB7-3v-gdL">
+                                    <barButtonItem title="☆" id="kB7-3v-gdL">
                                         <connections>
-                                            <action selector="AddFavouriteButton:" destination="8xm-Fg-SuT" id="1xm-0w-LPi"/>
+                                            <action selector="FavouriteButtonClicked:" destination="8xm-Fg-SuT" id="1xm-0w-LPi"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -77,8 +77,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="wJT-HL-ASp"/>
                     <connections>
+                        <outlet property="favouriteButton" destination="kB7-3v-gdL" id="YT6-iC-Btf"/>
                         <outlet property="tableView" destination="aS6-gS-Qkl" id="3Wc-kJ-vRi"/>
-                        <outlet property="titlebar" destination="wJT-HL-ASp" id="43Q-th-TWc"/>
+                        <outlet property="titlebar" destination="wJT-HL-ASp" id="slr-Al-GUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-n6-cLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,8 +96,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="oeu-dK-XTk" kind="relationship" relationship="viewControllers" id="e4a-97-PsF"/>
                         <segue destination="kLj-Sh-3Un" kind="relationship" relationship="viewControllers" id="QYi-yG-NQJ"/>
+                        <segue destination="oeu-dK-XTk" kind="relationship" relationship="viewControllers" id="e4a-97-PsF"/>
                         <segue destination="4iq-0G-HbI" kind="relationship" relationship="viewControllers" id="jIi-xn-4EV"/>
                     </connections>
                 </tabBarController>
@@ -152,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="1385" y="748"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Stoppesteder i Nærheden-->
         <scene sceneID="WR7-Cn-EhR">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="qwn-Xh-85k" customClass="LocationTableViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,12 +162,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="loc cell" id="pWX-Vw-2yx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="loc cell" textLabel="5cU-6W-1Hd" detailTextLabel="XKy-sC-XnU" style="IBUITableViewCellStyleSubtitle" id="pWX-Vw-2yx">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pWX-Vw-2yx" id="pUV-z2-WoY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5cU-6W-1Hd">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XKy-sC-XnU">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="8xm-Fg-SuT" kind="showDetail" identifier="show detail" id="E57-Wu-oyR"/>
@@ -178,7 +195,7 @@
                             <outlet property="delegate" destination="qwn-Xh-85k" id="3fd-U0-Vvd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="o5x-EU-HfW"/>
+                    <navigationItem key="navigationItem" title="Stoppesteder i Nærheden" id="o5x-EU-HfW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td8-gw-MT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,11 +217,11 @@
             </objects>
             <point key="canvasLocation" x="1660" y="2015"/>
         </scene>
-        <!--Item-->
+        <!--I Nærheden-->
         <scene sceneID="uCU-RK-wUO">
             <objects>
                 <splitViewController id="4iq-0G-HbI" customClass="CustomSplitViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="h2A-TV-yMq"/>
+                    <tabBarItem key="tabBarItem" title="I Nærheden" id="h2A-TV-yMq"/>
                     <connections>
                         <segue destination="fwd-IQ-9Eu" kind="relationship" relationship="masterViewController" id="acY-eV-HIZ"/>
                         <segue destination="8xm-Fg-SuT" kind="relationship" relationship="detailViewController" id="zzv-MH-Im0"/>
@@ -292,6 +309,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="E57-Wu-oyR"/>
+        <segue reference="yqa-jg-0fX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class APILocation: API {
-    func stopsNearby(location: CLLocation, completion: @escaping ([StopInfo]?)->Void) {
+    func stopsNearby(location: CLLocation, completion: @escaping ([LocationStopInfo]?)->Void) {
         let lat = Int(location.coordinate.latitude * 1_000_000)
         let lon = Int(location.coordinate.longitude * 1_000_000)
         let urlString = "\(base)/stopsNearby"
@@ -38,7 +38,7 @@ class APILocation: API {
         struct Inner : Codable {
             var StopLocation : [Location]
         }
-        struct Location : StopInfo, Codable {
+        struct Location : LocationStopInfo, Codable {
             var name : String
             var id : String
             var distance : String

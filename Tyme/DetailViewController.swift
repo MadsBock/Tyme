@@ -14,16 +14,16 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var titlebar: UINavigationItem!
+    @IBOutlet weak var favouriteButton: UIBarButtonItem!
     
-    @IBAction func AddFavouriteButton(_ sender: UIBarButtonItem) {
+    @IBAction func FavouriteButtonClicked(_ sender: UIBarButtonItem) {
         if let data = data {
             let success = favorites.AddFavourite(withID: data.id, andName: data.name)
-            if success {
-                print("Saved!")
-            } else {
-                print("Failed")
+            if !success {
+                favorites.RemoveFavourite(withID: data.id)
             }
         }
+        UpdateFavouriteButton()
     }
     public var data : StopInfo? {
         didSet {
@@ -43,12 +43,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         titlebar.title = data?.name
+        UpdateFavouriteButton()
+    }
+    
+    func UpdateFavouriteButton() {
+        guard let id = data?.id else {return}
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        favouriteButton.title = favorites.FavouriteExists(withID: id) ? "★" : "☆"
     }
 
     override func didReceiveMemoryWarning() {

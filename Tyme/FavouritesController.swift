@@ -65,6 +65,10 @@ class FavouritesController: NSObject {
         SaveData()
     }
     
+    public func FavouriteExists(withID id: String) -> Bool {
+        return favourites[id] != nil
+    }
+    
     private func SaveData() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favourites, toFile: FavouritesController.ArchiveURL.path)
         print("Saving was a \(isSuccessfulSave ? "Success" : "Failure")")
