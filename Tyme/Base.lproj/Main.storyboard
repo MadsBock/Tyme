@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-n6-cLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2928.8000000000002" y="-228.03598200899552"/>
+            <point key="canvasLocation" x="3956" y="143"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IeF-ZY-INW">
@@ -97,11 +97,12 @@
                     <connections>
                         <segue destination="oeu-dK-XTk" kind="relationship" relationship="viewControllers" id="e4a-97-PsF"/>
                         <segue destination="kLj-Sh-3Un" kind="relationship" relationship="viewControllers" id="QYi-yG-NQJ"/>
+                        <segue destination="4iq-0G-HbI" kind="relationship" relationship="viewControllers" id="jIi-xn-4EV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f6-jD-QCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382" y="396"/>
+            <point key="canvasLocation" x="-382" y="748"/>
         </scene>
         <!--Favouritter-->
         <scene sceneID="DZK-RZ-1v2">
@@ -150,6 +151,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwl-HG-I18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1385" y="748"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="WR7-Cn-EhR">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="qwn-Xh-85k" customClass="LocationTableViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="THF-KT-2yC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="loc cell" id="pWX-Vw-2yx">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pWX-Vw-2yx" id="pUV-z2-WoY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8xm-Fg-SuT" kind="showDetail" identifier="show detail" id="E57-Wu-oyR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qwn-Xh-85k" id="3pV-O4-z8F"/>
+                            <outlet property="delegate" destination="qwn-Xh-85k" id="3fd-U0-Vvd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="o5x-EU-HfW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Td8-gw-MT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2612" y="2015"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fFe-nG-SNP">
+            <objects>
+                <navigationController id="fwd-IQ-9Eu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2rp-Ku-WDR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qwn-Xh-85k" kind="relationship" relationship="rootViewController" id="UOD-d3-JZc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozv-Vd-Z8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="2015"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uCU-RK-wUO">
+            <objects>
+                <splitViewController id="4iq-0G-HbI" customClass="CustomSplitViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="h2A-TV-yMq"/>
+                    <connections>
+                        <segue destination="fwd-IQ-9Eu" kind="relationship" relationship="masterViewController" id="acY-eV-HIZ"/>
+                        <segue destination="8xm-Fg-SuT" kind="relationship" relationship="detailViewController" id="zzv-MH-Im0"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xme-Q6-Sfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="2015"/>
         </scene>
         <!--Favouritter-->
         <scene sceneID="g8g-92-YTw">
@@ -216,7 +279,7 @@
         <!--Søg-->
         <scene sceneID="ljp-fl-z7q">
             <objects>
-                <splitViewController id="oeu-dK-XTk" sceneMemberID="viewController">
+                <splitViewController id="oeu-dK-XTk" customClass="CustomSplitViewController" customModule="Tyme" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Søg" id="qgI-Rz-LGL"/>
                     <connections>
                         <segue destination="ORs-IA-qRN" kind="relationship" relationship="masterViewController" id="Mot-hX-qQa"/>
@@ -229,6 +292,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2em-ez-Z46"/>
+        <segue reference="E57-Wu-oyR"/>
     </inferredMetricsTieBreakers>
 </document>

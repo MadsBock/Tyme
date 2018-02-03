@@ -20,6 +20,8 @@
 		FF9FF32A1FCF0EF00048504B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */; };
 		FFBD76C9201A51B2007517C0 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD76C8201A51B2007517C0 /* FavouritesTableViewController.swift */; };
 		FFBD76E9201DF7C7007517C0 /* CustomSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD76E8201DF7C7007517C0 /* CustomSplitViewController.swift */; };
+		FFBD76EB201DF9C5007517C0 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD76EA201DF9C5007517C0 /* LocationTableViewController.swift */; };
+		FFBD76ED201DFB58007517C0 /* APILocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD76EC201DFB58007517C0 /* APILocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		FF9FF32B1FCF0EF00048504B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFBD76C8201A51B2007517C0 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 		FFBD76E8201DF7C7007517C0 /* CustomSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitViewController.swift; sourceTree = "<group>"; };
+		FFBD76EA201DF9C5007517C0 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		FFBD76EC201DFB58007517C0 /* APILocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		FF9FF31C1FCF0EF00048504B /* Tyme */ = {
 			isa = PBXGroup;
 			children = (
+				FFBD76EC201DFB58007517C0 /* APILocation.swift */,
+				FFBD76EA201DF9C5007517C0 /* LocationTableViewController.swift */,
 				FFBD76E8201DF7C7007517C0 /* CustomSplitViewController.swift */,
 				FF21CAE22014165500FCC0A7 /* FavouritesController.swift */,
 				FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */,
@@ -163,9 +169,11 @@
 				FF21CADF2013BE5000FCC0A7 /* DetailViewController.swift in Sources */,
 				FF21CAE32014165500FCC0A7 /* FavouritesController.swift in Sources */,
 				FF21CAC42013980100FCC0A7 /* MainViewController.swift in Sources */,
+				FFBD76ED201DFB58007517C0 /* APILocation.swift in Sources */,
 				FF925A4420135A2100E69509 /* APIConnector.swift in Sources */,
 				FF21CADD2013B17400FCC0A7 /* SearchTableViewController.swift in Sources */,
 				FF21CAC62013984E00FCC0A7 /* API.swift in Sources */,
+				FFBD76EB201DF9C5007517C0 /* LocationTableViewController.swift in Sources */,
 				FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */,
 				FF21CAE12013BF5200FCC0A7 /* APIDetail.swift in Sources */,
 				FFBD76E9201DF7C7007517C0 /* CustomSplitViewController.swift in Sources */,
@@ -306,11 +314,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A9F7HE3KKT;
 				INFOPLIST_FILE = Tyme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.bewildered.mach.Tyme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,11 +331,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A9F7HE3KKT;
 				INFOPLIST_FILE = Tyme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.bewildered.mach.Tyme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

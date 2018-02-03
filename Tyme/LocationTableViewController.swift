@@ -1,17 +1,25 @@
 //
-//  FavouritesTableViewController.swift
+//  LocationTableViewController.swift
 //  Tyme
 //
-//  Created by elev on 25/01/2018.
+//  Created by elev on 28/01/2018.
 //  Copyright © 2018 Mads Bock. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
-class FavouritesTableViewController: UITableViewController {
-    private let controller = FavouritesController.instance
+class LocationTableViewController: UITableViewController, CLLocationManagerDelegate {
+
+    let locationManager = CLLocationManager()
+    var stops : [StopInfo]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestLocation()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -19,8 +27,18 @@ class FavouritesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations[0]
+        APILocation().stopsNearby(location: loc) {
+            self.stops = $0
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location Error: \(error)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,18 +49,22 @@ class FavouritesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let res = controller.favourites.count
-        return res
+        // #warning Incomplete implementation, return the number of rows
+        guard let stops = stops else {return 0}
+        
+        return stops.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "fav cell", for: indexPath)
-        let index = indexPath.row
-        cell.textLabel?.text = controller.getIndex(index)?.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "loc cell", for: indexPath)
+        guard let stopname = stops?[indexPath.row].name else {return cell}
+        
+        cell.textLabel?.text = stopname
 
         return cell
     }
@@ -87,7 +109,10 @@ class FavouritesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "show detail") {
-            if let detail = segue.destination as? DetailViewController, let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell)?.row, let data = controller.getIndex(index) {
+            if  let detail = segue.destination as? DetailViewController,
+                let cell = sender as? UITableViewCell,
+                let index = tableView.indexPath(for: cell)?.row,
+                let data = stops?[index] {
                 
                 detail.data = data
             } else {
@@ -98,11 +123,4 @@ class FavouritesTableViewController: UITableViewController {
         }
     }
 
-}
-
-extension FavouritesController {
-    func getIndex(_ index: Int) -> FavouritesController.Favourite? {
-        let keyArray = Array(self.favourites.keys)
-        return self.favourites[keyArray[index]]
-    }
 }

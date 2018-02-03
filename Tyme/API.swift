@@ -20,7 +20,7 @@ class API: NSObject {
     }
 }
 
-protocol StopInfo {
+protocol StopInfo : Codable {
     var name : String {get}
     var id : String {get}
 }
