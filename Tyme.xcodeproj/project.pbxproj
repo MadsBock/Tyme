@@ -13,6 +13,7 @@
 		FF21CADF2013BE5000FCC0A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CADE2013BE5000FCC0A7 /* DetailViewController.swift */; };
 		FF21CAE12013BF5200FCC0A7 /* APIDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */; };
 		FF21CAE32014165500FCC0A7 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21CAE22014165500FCC0A7 /* FavouritesController.swift */; };
+		FF459AE2202609B700693EDD /* tymeIcon.zip in Resources */ = {isa = PBXBuildFile; fileRef = FF459AE1202609B700693EDD /* tymeIcon.zip */; };
 		FF925A4420135A2100E69509 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF925A4320135A2100E69509 /* APIConnector.swift */; };
 		FF9FF31E1FCF0EF00048504B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */; };
 		FF9FF3251FCF0EF00048504B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9FF3231FCF0EF00048504B /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		FF21CADE2013BE5000FCC0A7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF21CAE02013BF5200FCC0A7 /* APIDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDetail.swift; sourceTree = "<group>"; };
 		FF21CAE22014165500FCC0A7 /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
+		FF459AE1202609B700693EDD /* tymeIcon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = tymeIcon.zip; path = ../../../../Downloads/tymeIcon.zip; sourceTree = "<group>"; };
 		FF925A4320135A2100E69509 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		FF9FF31A1FCF0EF00048504B /* Tyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9FF31D1FCF0EF00048504B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				FF21CAC32013980100FCC0A7 /* MainViewController.swift */,
 				FF21CAC52013984E00FCC0A7 /* API.swift */,
 				FF925A4320135A2100E69509 /* APIConnector.swift */,
+				FF459AE1202609B700693EDD /* tymeIcon.zip */,
 				FF9FF3261FCF0EF00048504B /* Assets.xcassets */,
 				FF9FF3281FCF0EF00048504B /* LaunchScreen.storyboard */,
 				FF9FF32B1FCF0EF00048504B /* Info.plist */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9FF32A1FCF0EF00048504B /* LaunchScreen.storyboard in Resources */,
+				FF459AE2202609B700693EDD /* tymeIcon.zip in Resources */,
 				FF9FF3271FCF0EF00048504B /* Assets.xcassets in Resources */,
 				FF9FF3251FCF0EF00048504B /* Main.storyboard in Resources */,
 			);
