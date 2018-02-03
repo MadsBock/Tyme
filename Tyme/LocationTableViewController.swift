@@ -16,14 +16,16 @@ class LocationTableViewController: UITableViewController, CLLocationManagerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        loadLocationData()
         
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(listRefreshed(_:)), for: .valueChanged)
+        
+        loadLocationData()
     }
     
     func loadLocationData() {
-   locationManager.requestWhenInUseAuthorization()
+        refreshControl?.beginRefreshing()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestLocation()
     }

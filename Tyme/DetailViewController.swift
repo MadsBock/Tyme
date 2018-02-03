@@ -27,14 +27,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     public var data : StopInfo? {
         didSet {
-            if let data = data {
-                APIDetail().GetDetails(id: data.id) {
-                    (details) in
-                    self.details = details
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
+            refreshData()
+        }
+    }
+    
+    func refreshData() {
+        guard let id = data?.id else {return}
+        
+        APIDetail().GetDetails(id: id) {
+            self.details = $0
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.refreshControl?.endRefreshing()
             }
         }
     }
@@ -44,6 +48,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         titlebar.title = data?.name
         UpdateFavouriteButton()
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.addTarget(self, action: #selector(refreshList(_:)), for: .valueChanged)
+    }
+    
+    @objc func refreshList(_ sender: Any) {
+        refreshData()
     }
     
     func UpdateFavouriteButton() {
