@@ -33,6 +33,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func refreshData() {
         guard let id = data?.id else {return}
+        if let refresh = tableView?.refreshControl {
+            refresh.beginRefreshing()
+        }
         
         APIDetail().GetDetails(id: id) {
             self.details = $0
